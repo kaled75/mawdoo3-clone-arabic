@@ -1,6 +1,7 @@
-import { Search, Menu } from "lucide-react";
+import { Search, Menu, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -48,9 +49,16 @@ const Header = () => {
             </nav>
           </div>
           
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-6 w-6" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" asChild>
+              <Link to="/admin">
+                <Settings className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </div>
         </div>
       </div>
     </header>
